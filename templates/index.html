@@ -1,7 +1,42 @@
 <!doctype html>
 <html lang="en">
-    <head></head>
+    <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	</head>
     <body>
+	<main>
         <h1>Deaths during the L.A. riots</h1>
-    </body>
+		<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Type</th>
+      <th scope="col">Address</th>
+	  <th scope="col">Age</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Race</th>
+	  
+    </tr>
+  </thead>
+  <tbody>
+  {% for obj in object_list %}
+  <tr>
+                <th scope = 'row' ><a href="{{ obj.id }}/">{{ obj.full_name }}</a></th>
+                <td>{{ obj.date }}</td>
+                <td>{{ obj.type }}</td>
+                <td>{{ obj.address }}</td>
+                <td>{{ obj.age }}</td>
+                <td>{{ obj.gender }}</td>
+                <td>{{ obj.race }}</td>
+            </tr>
+        {% endfor %}
+  </tbody>
+</table>
+ {{ object_list }}
+    </main>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
 </html>
